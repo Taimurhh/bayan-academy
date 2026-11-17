@@ -1,0 +1,326 @@
+/*
+  Bayan Academy components. Requires tokens/tokens.css.
+  Every colour, size and radius here is a token; the only literal colours are
+  inside .social, whose templates are fixed artwork and never follow the theme.
+*/
+
+/* ---------- Logo (inline SVG via <use>) ---------- */
+.logo {
+  --logo-type: var(--ink);
+  --logo-line: var(--brand);
+  --logo-dot: var(--accent);
+  display: block;
+  height: auto;
+}
+.logo--reversed { --logo-type: #F7F6F2; --logo-line: #F7F6F2; --logo-dot: #FFB23F; }
+.logo--mono { --logo-type: #1F2457; --logo-line: #1F2457; --logo-dot: #1F2457; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-3) var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font: 600 15px/20px var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.btn:focus-visible,
+.tag:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+.btn[disabled],
+.btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; }
+
+/* Primary: the main action on a screen that is not an enrolment. */
+.btn--primary { background: var(--brand-strong); color: var(--on-brand); }
+.btn--primary:hover { background: color-mix(in srgb, var(--brand-strong), #000 14%); }
+
+/* Accent: "Enrol" only, at most one per screen. */
+.btn--accent { background: var(--accent); color: var(--on-accent); }
+.btn--accent:hover { background: color-mix(in srgb, var(--accent), #000 10%); }
+
+/* Secondary: an alternative next to a primary or accent button. */
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--brand-strong); }
+.btn--secondary:hover { background: var(--tint); }
+
+/* Text: low-emphasis actions and inline links that behave like buttons. */
+.btn--text {
+  min-height: 44px;
+  padding: var(--space-3) var(--space-1);
+  background: transparent;
+  color: var(--brand-strong);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.btn--text:hover { text-decoration-color: var(--accent); }
+
+/* ---------- Tags ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-1) 10px;
+  border-radius: var(--radius-pill);
+  font: 600 14px/20px var(--font-body);
+  white-space: nowrap;
+}
+.tag--mentorship { background: var(--mentor-tint); color: var(--accent-text); }
+.tag--speak { background: var(--speak-tint); color: var(--speak); }
+.tag--age { background: var(--tint); color: var(--ink); }
+.tag--open { background: var(--tint); color: var(--success); }
+.tag--full { background: var(--tint); color: var(--ink-muted); }
+/* Status tags always say "Batch open" / "Batch full" in words; the dot is a second cue, not the only one. */
+.tag--open::before,
+.tag--full::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.tag--full::before { background: transparent; box-shadow: inset 0 0 0 2px currentColor; }
+
+/* ---------- Placeholder flag (for fees and sample content) ---------- */
+.placeholder-flag {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border: 1.5px dashed var(--danger);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------- Programme card ---------- */
+.programme-card {
+  --programme-tint: var(--tint);
+  --programme-text: var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  color: var(--ink);
+}
+.programme-card--mentorship { --programme-tint: var(--mentor-tint); --programme-text: var(--accent-text); }
+.programme-card--speak { --programme-tint: var(--speak-tint); --programme-text: var(--speak); }
+
+.programme-card__head {
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  background: var(--programme-tint);
+}
+.programme-card__eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--programme-text);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.programme-card__title { margin: 0; font: 700 28px/34px var(--font-display); color: var(--ink); }
+.programme-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+.programme-card__body p { margin: 0; font: 400 16px/26px var(--font-body); }
+.programme-card__facts {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 400 15px/22px var(--font-body);
+}
+.programme-card__facts li { display: flex; gap: var(--space-2); }
+.programme-card__facts li::before {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: var(--brand);
+}
+.programme-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.programme-card__fee {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+.programme-card__amount { font: 700 20px/28px var(--font-display); }
+.programme-card__per { color: var(--ink-muted); font: 400 14px/21px var(--font-body); }
+.programme-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-top: auto; }
+
+/* Mehran Framework stepper (used in the Bayan Mentorship card and page) */
+.framework {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 600 14px/20px var(--font-body);
+}
+.framework li { display: inline-flex; align-items: center; gap: var(--space-2); }
+.framework li:not(:last-child)::after { content: "→"; color: var(--ink-muted); font-weight: 400; }
+
+/* ---------- Testimonial ---------- */
+.testimonial {
+  margin: 0;
+  padding: var(--space-6);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+.testimonial__rule { display: block; width: 56px; height: 28px; margin-bottom: var(--space-4); }
+.testimonial blockquote { margin: 0; font: 650 20px/28px var(--font-display); color: var(--ink); }
+.testimonial figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-5);
+  color: var(--ink-muted);
+  font: 400 14px/21px var(--font-body);
+}
+.testimonial figcaption strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Underline motif: the ب line and dot under the word that matters ---------- */
+.mark-word {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.32em;
+  margin-bottom: -0.32em;
+}
+.mark-word::before {
+  content: "";
+  position: absolute;
+  left: 0.02em;
+  right: 0.02em;
+  bottom: 0.18em;
+  height: 0.09em;
+  border-radius: 1em;
+  background: var(--mark-line, var(--brand));
+}
+.mark-word::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.06em;
+  width: 0.17em;
+  height: 0.17em;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateX(-50%);
+}
+
+/* ---------- Social templates (fixed artwork; do not theme) ---------- */
+.social {
+  --s-indigo: #1F2457;
+  --s-paper: #F7F6F2;
+  --s-saffron: #FFB23F;
+  --s-tint: #E8E9F3;
+  --s-speak: #0E6B72;
+  --s-speak-tint: #DDF0F0;
+  --s-mentor-tint: #FBEBD0;
+  --s-mentor-text: #8A5410;
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 0 1px var(--line);
+  color-scheme: light;
+}
+/* All sizes are in cqw so the template scales: 1cqw = 10.8px on a 1080px-wide export. */
+.social--post { aspect-ratio: 4 / 5; background: var(--s-paper); color: var(--s-indigo); }
+.social--reel { aspect-ratio: 9 / 16; background: var(--s-indigo); color: var(--s-paper); }
+
+.social__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 7.4cqw;
+}
+.social__eyebrow {
+  align-self: flex-start;
+  padding: 1.1cqw 2.6cqw;
+  border-radius: 99cqw;
+  font: 700 2.6cqw/1.2 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.social--post .social__eyebrow { background: var(--s-speak-tint); color: var(--s-speak); }
+.social--reel .social__eyebrow { background: var(--s-mentor-tint); color: var(--s-mentor-text); }
+.social__headline {
+  margin: auto 0 0;
+  font: 800 10.4cqw/1.04 var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.social--reel .social__headline { margin: auto 0; font-size: 11.8cqw; text-align: center; }
+/* Underline only a word on the last line of a headline: the dot needs the space below it. */
+.social__headline .mark-word { --mark-line: var(--s-indigo); }
+.social--reel .social__headline .mark-word { --mark-line: var(--s-paper); }
+.social__body { margin: 6cqw 0 0; font: 400 3.7cqw/1.45 var(--font-body); max-width: 80%; }
+.social__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3cqw;
+  margin-top: 6cqw;
+  padding-top: 3.4cqw;
+  border-top: 0.28cqw solid currentColor;
+}
+.social__foot .logo { width: 32cqw; }
+.social__endorse { margin: 0; font: 400 2.4cqw/1.35 var(--font-body); text-align: right; max-width: 40%; }
+.social--reel .social__top { display: flex; justify-content: center; }
+.social--reel .social__top .logo { width: 44cqw; }
+.social--reel .social__foot { justify-content: center; border-top: 0; flex-direction: column; align-items: center; text-align: center; }
+.social--reel .social__endorse { text-align: center; max-width: none; font-size: 2.8cqw; }
+.social--reel .social__foot .social__eyebrow { align-self: center; }
+.social__tagline { margin: 0; font: 650 4.4cqw/1.3 var(--font-display); }
+
+/* Reel cover guide: the profile grid shows the centre 3:4 of a 9:16 cover. Keep type inside it. */
+.social__guide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12.5%;
+  bottom: 12.5%;
+  border-block: 0.4cqw dashed var(--s-saffron);
+  pointer-events: none;
+}
+.social__guide span {
+  position: absolute;
+  top: 1cqw;
+  right: 2cqw;
+  color: var(--s-saffron);
+  font: 700 2.2cqw/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.social--reel .social__inner { padding: 27cqw 8cqw; }
+.hide-guides .social__guide { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

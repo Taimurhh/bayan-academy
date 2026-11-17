@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enrol · Bayan Academy</title>
+<meta name="description" content="Enrol in Bayan Mentorship or Bayan Speak. Send the form and we will call you to confirm a place.">
+<meta name="theme-color" content="#07040D">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Enrol · Bayan Academy">
+<meta property="og:description" content="Send the enrolment form and we will call you to confirm a place.">
+<meta property="og:image" content="assets/img/art/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/bayan-academy-profile.png">
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<!-- header -->
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar">
+  <div class="wrap">
+    <span>Live online classes in AI, coding, STEM, academics, English and mentorship</span>
+    <span>WhatsApp <a href="https://wa.me/923000000000" data-todo="real WhatsApp number">0300 0000000</a><span class="hide-sm"> · <a href="mailto:hello@bayan.academy" data-todo="real email">hello@bayan.academy</a></span></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand-link" href="index.html" aria-label="Bayan Academy home">
+      <img class="on-light" src="assets/img/bayan-academy-lockup.svg" alt="Bayan Academy" width="328" height="120">
+      <img class="on-dark" src="assets/img/bayan-academy-lockup-reversed.svg" alt="Bayan Academy" width="328" height="120">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <a href="index.html#programmes">Programmes</a>
+      <a href="mentorship.html">Mentorship</a>
+      <a href="index.html#method">How it works</a>
+      <a href="about.html">About</a>
+      <a href="index.html#faq">Questions</a>
+      <a class="btn btn--primary" href="enrol.html">Enrol</a>
+    </nav>
+  </div>
+</header>
+<!-- /header -->
+
+<main id="main">
+  <section class="hero" style="padding-bottom:var(--space-6)">
+    <div class="wrap">
+      <div class="hero__copy">
+        <span class="kicker">Enrol</span>
+        <h1 class="big">Grab your <span class="mark-word">seat</span>.</h1>
+        <p class="lead">Pick a programme, fill this in and send it. We’ll call to confirm the right track and class times, and answer your questions, before you pay anything.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light" style="padding-top:0">
+    <div class="wrap enrol-layout">
+      <div>
+        <form class="form" id="enrol-form" novalidate>
+          <fieldset>
+            <legend>1. Programme</legend>
+            <div class="field">
+              <span class="label" id="programme-label">Which programme?</span>
+              <div class="choices" role="radiogroup" aria-labelledby="programme-label">
+                <label class="choice"><input type="radio" id="programme-speak" name="programme" value="Bayan Speak"><span>Bayan Speak</span></label>
+                <label class="choice"><input type="radio" id="programme-ai" name="programme" value="Bayan AI"><span>Bayan AI</span></label>
+                <label class="choice"><input type="radio" id="programme-mentorship" name="programme" value="Bayan Mentorship"><span>Bayan Mentorship session</span></label>
+              </div>
+              <p class="hint">Bayan Code, STEM and Academics are coming soon. <a href="https://wa.me/923000000000?text=Assalamu%20alaikum.%20Please%20add%20me%20to%20the%20waitlist." data-todo="real WhatsApp number">Join the waitlist on WhatsApp</a>.</p>
+              <p class="error" data-error="programme" aria-live="polite"></p>
+            </div>
+            <div class="field" data-for="mentorship" hidden>
+              <span class="label" id="batch-label">How many sessions?</span>
+              <div class="choices" role="radiogroup" aria-labelledby="batch-label">
+                <label class="choice"><input type="radio" id="batch-one" name="batch" value="One session"><span>Clarity Session (one session)</span></label>
+                <label class="choice"><input type="radio" id="batch-four" name="batch" value="Four sessions (one a week)"><span>The 30-Day Reset (four sessions)</span></label>
+              </div>
+              <p class="hint">Tell us good days and times in the notes below. We’ll confirm a time on WhatsApp.</p>
+              <p class="error" data-error="batch" aria-live="polite"></p>
+            </div>
+            <div class="field" data-for="level" hidden>
+              <label for="level">Which track or level?</label>
+              <select id="level" name="level">
+                <option value="">Choose one</option>
+              </select>
+              <p class="error" data-error="level" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Student</legend>
+            <div class="two-up">
+              <div class="field">
+                <label for="student">Student’s name</label>
+                <input type="text" id="student" name="student" autocomplete="off">
+                <p class="error" data-error="student" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age" inputmode="numeric" maxlength="2" aria-describedby="age-hint">
+                <p class="hint" id="age-hint">In years.</p>
+                <p class="error" data-error="age" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="grade">Grade or class</label>
+              <select id="grade" name="grade">
+                <option value="">Choose one</option>
+                <option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option>
+                <option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option>
+                <option>Class 11</option><option>Class 12</option><option>O Level</option><option>A Level</option>
+                <option>University</option><option>Working adult</option>
+              </select>
+              <p class="hint">We use age and grade to place the student in the right batch.</p>
+              <p class="error" data-error="grade" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Parent or guardian</legend>
+            <div class="field">
+              <label for="parent">Your name</label>
+              <input type="text" id="parent" name="parent" autocomplete="name">
+              <p class="error" data-error="parent" aria-live="polite"></p>
+            </div>
+            <div class="two-up">
+              <div class="field">
+                <label for="phone">WhatsApp number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="0300 1234567">
+                <p class="hint">We use this to call you and send class details.</p>
+                <p class="error" data-error="phone" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="Karachi">
+                <p class="error" data-error="city" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes">Anything we should know? <span class="muted">(optional)</span></label>
+              <textarea id="notes" name="notes" placeholder="Preferred days, a question, or anything about the student"></textarea>
+            </div>
+            <div class="field">
+              <label class="check"><input type="checkbox" id="guardian" name="guardian"> I am the student’s parent or guardian.</label>
+              <p class="error" data-error="guardian" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <div><button class="btn btn--accent btn--lg" type="submit">Send enrolment request</button></div>
+        </form>
+
+        <div class="confirm" id="enrol-confirm" tabindex="-1" hidden>
+          <span class="status-word">Request ready</span>
+          <h2>Last step: send it on WhatsApp</h2>
+          <p class="muted">Tap the button to open WhatsApp with your details filled in, then press send. We’ll reply to confirm your place.</p>
+          <pre id="confirm-summary"></pre>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" id="confirm-whatsapp" href="#">Send on WhatsApp</a>
+            <button class="btn btn--text" type="button" id="confirm-edit">Change details</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <img src="assets/img/art/planet.jpg" alt="" width="800" height="1000" loading="lazy">
+        <h2>What happens next</h2>
+        <ol class="outline">
+          <li><span class="time">1</span><div><b>We call you</b><p data-todo="confirm call-back time">Usually within two working days.</p></div></li>
+          <li><span class="time">2</span><div><b>You confirm a place</b><p>We agree the batch and times together.</p></div></li>
+          <li><span class="time">3</span><div><b>Pay the first month</b><p>Then you get the class link.</p></div></li>
+        </ol>
+        <p>Rather talk first? <a href="https://wa.me/923000000000" data-todo="real WhatsApp number">Message us on WhatsApp</a>.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/img/bayan-academy-lockup-reversed.svg" alt="Bayan Academy" width="328" height="120">
+        <p class="footer-tagline">Ilm that works.</p>
+        <p class="footer-endorse">An initiative of Mehran Education System</p>
+      </div>
+      <div>
+        <h2>Programmes</h2>
+        <ul>
+          <li><a href="ai.html">Bayan AI</a></li>
+          <li><a href="code.html">Bayan Code</a></li>
+          <li><a href="stem.html">Bayan STEM</a></li>
+          <li><a href="academics.html">Bayan Academics</a></li>
+          <li><a href="speak.html">Bayan Speak</a></li>
+        </ul>
+        <h2 style="margin-top:var(--space-5)">Mentorship</h2>
+        <ul>
+          <li><a href="mentorship.html">Book a one-to-one session</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li>WhatsApp <a href="https://wa.me/923000000000" data-todo="real WhatsApp number">0300 0000000</a></li>
+          <li><a href="mailto:hello@bayan.academy" data-todo="real email">hello@bayan.academy</a></li>
+                    <li><a href="enrol.html">Enrol</a></li>
+          <li><a href="about.html">About Bayan Academy</a></li>
+          <li><a href="index.html#faq">Questions parents ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© <span data-year>2026</span> Mehran Education System. All rights reserved.</span>
+      <span>Classes are live and online.</span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/923000000000" aria-label="Ask Bayan Academy on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 10.5c.5 1.8 2 3.3 3.8 3.9"/></svg>
+  <span>WhatsApp us<small data-todo="confirm reply hours">Replies from 10 am PKT</small></span>
+</a>
+<script src="assets/js/site.js" defer></script>
+<!-- /footer -->
+</body>
+</html>

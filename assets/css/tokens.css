@@ -1,0 +1,111 @@
+/* Bayan Academy design tokens. Generated from tokens.json by tools/build_tokens.py: edit the JSON, not this file. */
+
+:root {
+  color-scheme: light;
+  --paper: #F7F6F2;
+  --paper-raised: #FFFFFF;
+  --tint: #E8E9F3;
+  --line: #CFD1E0;
+  --ink: #1F2457;
+  --ink-muted: #4D5277;
+  --brand: #1F2457;
+  --brand-strong: #2F3A84;
+  --on-brand: #FFFFFF;
+  --accent: #FFB23F;
+  --on-accent: #1A1206;
+  --accent-text: #8A5410;
+  --mentor-tint: #FBEBD0;
+  --speak: #0E6B72;
+  --speak-tint: #DDF0F0;
+  --success: #2A7649;
+  --danger: #B0402E;
+  --focus: #2E56C7;
+
+  --font-display: 'Bricolage Grotesque', 'Figtree', system-ui, sans-serif;
+  --font-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+  --font-arabic: 'Reem Kufi', sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --focus-ring: 2px solid var(--focus);
+  --focus-offset: 2px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #111327;
+  --paper-raised: #1A1D38;
+  --tint: #20244A;
+  --line: #353A63;
+  --ink: #EEEFF6;
+  --ink-muted: #AEB2CC;
+  --brand: #DDE0F2;
+  --brand-strong: #9AA6EE;
+  --on-brand: #111327;
+  --accent: #FFB23F;
+  --on-accent: #1A1206;
+  --accent-text: #F3BE6A;
+  --mentor-tint: #3A2A12;
+  --speak: #6FCBCF;
+  --speak-tint: #12323A;
+  --success: #6FCB95;
+  --danger: #F08A77;
+  --focus: #8FA8F0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #111327;
+    --paper-raised: #1A1D38;
+    --tint: #20244A;
+    --line: #353A63;
+    --ink: #EEEFF6;
+    --ink-muted: #AEB2CC;
+    --brand: #DDE0F2;
+    --brand-strong: #9AA6EE;
+    --on-brand: #111327;
+    --accent: #FFB23F;
+    --on-accent: #1A1206;
+    --accent-text: #F3BE6A;
+    --mentor-tint: #3A2A12;
+    --speak: #6FCBCF;
+    --speak-tint: #12323A;
+    --success: #6FCB95;
+    --danger: #F08A77;
+    --focus: #8FA8F0;
+  }
+}
+
+/* Type styles: one class per style. */
+.t-display-xl { font: 800 64px/64px var(--font-display); letter-spacing: -0.02em; }
+.t-display-l { font: 800 44px/48px var(--font-display); letter-spacing: -0.02em; }
+.t-heading { font: 700 28px/34px var(--font-display); }
+.t-subheading { font: 650 20px/28px var(--font-display); }
+.t-body-l { font: 400 18px/29px var(--font-body); }
+.t-body { font: 400 16px/26px var(--font-body); }
+.t-label { font: 600 15px/20px var(--font-body); }
+.t-small { font: 400 14px/21px var(--font-body); }
+.t-eyebrow { font: 700 12px/16px var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; }
+.t-urdu { font: 400 20px/40px var(--font-urdu); direction: rtl; }
+.t-arabic-name { font: 700 1em/1.2 var(--font-arabic); direction: rtl; }
+
+/* Display sizes step down on narrow screens so headlines never overflow a phone. */
+@media (max-width: 600px) {
+  .t-display-xl { font-size: 44px; line-height: 48px; }
+  .t-display-l { font-size: 36px; line-height: 40px; }
+}
